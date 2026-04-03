@@ -22,13 +22,23 @@ function loadProfile() {
 
     const text = document.getElementById("profileInput").value;
 
-   
-    const profile = JSON.parse(text);
+    if (!text) return null;   //if no valid input for text return null
+
+   try{
+        const profile = JSON.parse(text);
+        if (!profile.displayName) return null;   //validating
+        
+    
+    } catch (err){
+        return null;   //failing safely if it fails
+    }
+   }
+    
+
 
     currentProfile = profile;
 
     renderProfile(profile);
-}
 
 
 /* -------------------------
@@ -45,10 +55,10 @@ function renderProfile(profile) {
 
     for (let n of profile.notifications) {
 
-        const li = document.createElement("li");
+        const li = document.createElement("li"); 
 
         
-        li.innerHTML = n;
+        li.textContent = profile //using textContent instead of innerHTML to have a DOM input and not an HTML
 
         list.appendChild(li);
     }
@@ -65,6 +75,7 @@ function saveSession() {
     alert("Session saved");
 }
 
+if (!stored) return null;  //validating before use 
 
 function loadSession() {
 
