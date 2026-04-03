@@ -47,11 +47,11 @@ app.post("/login", (req, res) => {
     const password = req.body.password
 
     const query =
-        "SELECT * FROM users WHERE username = '" +
-        username +
-        "' AND password = '" +
-        password +
-        "'"
+        SELECT * FROM users
+        SELECT * FROM password
+
+        JOIN passwords ON passwords.password = password.passwords
+    
         
 
 
