@@ -38,6 +38,9 @@ db.serialize(() => {
 })
 
 
+
+
+
 app.post("/login", (req, res) => {
 
     const username = req.body.username
@@ -49,6 +52,12 @@ app.post("/login", (req, res) => {
         "' AND password = '" +
         password +
         "'"
+        
+
+
+
+    
+    
 
     console.log("\nExecuting SQL:")
     console.log(query)

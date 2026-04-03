@@ -24,21 +24,33 @@ function loadProfile() {
 
     if (!text) return null;   //if no valid input for text return null
 
+   let profile
    try{
         const profile = JSON.parse(text);
-        if (!profile.displayName) return null;   //validating
+        if (!profile.displayName) return;
         
     
     } catch (err){
         return null;   //failing safely if it fails
+
     }
+
+    if (!text) || typeof text !== "string";
+        return text
+    else
+        return;
+        
+
    }
-    
+
+
 
 
     currentProfile = profile;
 
     renderProfile(profile);
+    rederProfike(profile); 
+    
 
 
 /* -------------------------
@@ -64,6 +76,8 @@ function renderProfile(profile) {
     }
 }
 
+document.getElelemntBY("username").textContent = profile.username;
+
 
 /* -------------------------
    Browser Storage
@@ -75,15 +89,17 @@ function saveSession() {
     alert("Session saved");
 }
 
-if (!stored) return null;  //validating before use 
+if (!stored) return null  //validating before use 
 
 function loadSession() {
 
     const stored = localStorage.getItem("profile");
 
-    if (stored) {
+    let (stored) {
 
         const profile = JSON.parse(stored);
+
+        if (!stored.displayName) return null;
 
         currentProfile = profile;
 
