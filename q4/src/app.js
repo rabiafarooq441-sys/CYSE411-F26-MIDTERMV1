@@ -1,7 +1,7 @@
 // CYSE 411 Exam Application
 // WARNING: This code contains security vulnerabilities.
 // Students must repair the implementation.
-//Rabia Farooq
+//Rabia Farooq CYSE 411
 
 const loadBtn = document.getElementById("loadBtn");
 const saveBtn = document.getElementById("saveSession");
